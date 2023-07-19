@@ -6,7 +6,7 @@
 /*   By: mcutura <mcutura@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 07:13:02 by mcutura           #+#    #+#             */
-/*   Updated: 2023/07/19 17:24:24 by mcutura          ###   ########.fr       */
+/*   Updated: 2023/07/19 19:13:16 by mcutura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Fixed::Fixed(const Fixed &copy)
 
 Fixed &Fixed::operator=(Fixed const &copy)
 {
-	this->_fixed_point_value = copy.getRawBits();
+	if (this != &copy)
+		this->_fixed_point_value = copy.getRawBits();
 	return (*this);
 }
 

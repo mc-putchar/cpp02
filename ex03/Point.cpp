@@ -6,7 +6,7 @@
 /*   By: mcutura <mcutura@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 07:42:00 by mcutura           #+#    #+#             */
-/*   Updated: 2023/07/19 18:36:19 by mcutura          ###   ########.fr       */
+/*   Updated: 2023/07/19 19:14:30 by mcutura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ Point::Point( void ) : _x(0), _y(0) {}
 
 Point::Point( Point const & src )
 {
-	Point const &pointRef = src;
-	*this = pointRef;
+	*this = src;
 }
 
 Point::Point( float const x, float const y ) : _x(x), _y(y) {}
 
 Point & Point::operator=( Point const &src )
 {
-	Point *newPoint = new Point(src.getX().toFloat(), src.getY().toFloat());
-	return (*newPoint);
+	if (this != &src) { ; }
+	return (*this);
 }
 
 Point::~Point( void ) {}
