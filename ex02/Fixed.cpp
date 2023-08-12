@@ -26,12 +26,12 @@ Fixed::Fixed(float const n)
 
 Fixed::~Fixed() {}
 
-Fixed::Fixed(const Fixed &copy)
+Fixed::Fixed(Fixed const &copy)
 {
 	*this = copy;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy)
+Fixed &Fixed::operator=(Fixed const &copy)
 {
 	this->_fixed_point_value = copy.getRawBits();
 	return (*this);
@@ -57,52 +57,52 @@ int		Fixed::toInt( void ) const
 	return (this->_fixed_point_value >> this->_fractional_bits);
 }
 
-bool	Fixed::operator>(const Fixed &copy) const
+bool	Fixed::operator>(Fixed const &copy) const
 {
 	return (this->_fixed_point_value > copy.getRawBits());
 }
 
-bool	Fixed::operator<(const Fixed &copy) const
+bool	Fixed::operator<(Fixed const &copy) const
 {
 	return (this->_fixed_point_value < copy.getRawBits());
 }
 
-bool	Fixed::operator>=(const Fixed &copy) const
+bool	Fixed::operator>=(Fixed const &copy) const
 {
 	return (this->_fixed_point_value >= copy.getRawBits());
 }
 
-bool	Fixed::operator<=(const Fixed &copy) const
+bool	Fixed::operator<=(Fixed const &copy) const
 {
 	return (this->_fixed_point_value <= copy.getRawBits());
 }
 
-bool	Fixed::operator==(const Fixed &copy) const
+bool	Fixed::operator==(Fixed const &copy) const
 {
 	return (this->_fixed_point_value == copy.getRawBits());
 }
 
-bool	Fixed::operator!=(const Fixed &copy) const
+bool	Fixed::operator!=(Fixed const &copy) const
 {
 	return (this->_fixed_point_value != copy.getRawBits());
 }
 
-Fixed	Fixed::operator+(const Fixed &copy) const
+Fixed	Fixed::operator+(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() + copy.toFloat()));
 }
 
-Fixed	Fixed::operator-(const Fixed &copy) const
+Fixed	Fixed::operator-(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() - copy.toFloat()));
 }
 
-Fixed	Fixed::operator*(const Fixed &copy) const
+Fixed	Fixed::operator*(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() * copy.toFloat()));
 }
 
-Fixed	Fixed::operator/(const Fixed &copy) const
+Fixed	Fixed::operator/(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() / copy.toFloat()));
 }

@@ -19,13 +19,13 @@ class Fixed
 {
 	private:
 		int					_fixed_point_value;
-		static const int	_fractional_bits = 8;
+		static int const	_fractional_bits = 8;
 	public:
 		Fixed();
 		Fixed(int const value);
 		Fixed(float const value);
-		Fixed(const Fixed &copy);
-		Fixed &operator=(const Fixed &copy);
+		Fixed(Fixed const &copy);
+		Fixed &operator=(Fixed const &copy);
 		~Fixed();
 		
 		int		getRawBits( void ) const;
@@ -33,17 +33,17 @@ class Fixed
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 		
-		bool	operator>(const Fixed &copy) const;
-		bool	operator<(const Fixed &copy) const;
-		bool	operator>=(const Fixed &copy) const;
-		bool	operator<=(const Fixed &copy) const;
-		bool	operator==(const Fixed &copy) const;
-		bool	operator!=(const Fixed &copy) const;
+		bool	operator>(Fixed const &copy) const;
+		bool	operator<(Fixed const &copy) const;
+		bool	operator>=(Fixed const &copy) const;
+		bool	operator<=(Fixed const &copy) const;
+		bool	operator==(Fixed const &copy) const;
+		bool	operator!=(Fixed const &copy) const;
 
-		Fixed	operator+(const Fixed &copy) const;
-		Fixed	operator-(const Fixed &copy) const;
-		Fixed	operator*(const Fixed &copy) const;
-		Fixed	operator/(const Fixed &copy) const;
+		Fixed	operator+(Fixed const &copy) const;
+		Fixed	operator-(Fixed const &copy) const;
+		Fixed	operator*(Fixed const &copy) const;
+		Fixed	operator/(Fixed const &copy) const;
 
 		Fixed	&operator++();
 		Fixed	operator++(int);
