@@ -6,7 +6,7 @@
 /*   By: mcutura <mcutura@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 07:13:02 by mcutura           #+#    #+#             */
-/*   Updated: 2023/07/19 19:13:16 by mcutura          ###   ########.fr       */
+/*   Updated: 2023/07/19 07:38:06 by mcutura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@ Fixed::Fixed(float const n)
 
 Fixed::~Fixed() {}
 
-Fixed::Fixed(const Fixed &copy)
+Fixed::Fixed(Fixed const &copy)
 {
 	*this = copy;
 }
 
 Fixed &Fixed::operator=(Fixed const &copy)
 {
-	if (this != &copy)
-		this->_fixed_point_value = copy.getRawBits();
+	this->_fixed_point_value = copy.getRawBits();
 	return (*this);
 }
 
@@ -58,52 +57,52 @@ int		Fixed::toInt( void ) const
 	return (this->_fixed_point_value >> this->_fractional_bits);
 }
 
-bool	Fixed::operator>(const Fixed &copy) const
+bool	Fixed::operator>(Fixed const &copy) const
 {
 	return (this->_fixed_point_value > copy.getRawBits());
 }
 
-bool	Fixed::operator<(const Fixed &copy) const
+bool	Fixed::operator<(Fixed const &copy) const
 {
 	return (this->_fixed_point_value < copy.getRawBits());
 }
 
-bool	Fixed::operator>=(const Fixed &copy) const
+bool	Fixed::operator>=(Fixed const &copy) const
 {
 	return (this->_fixed_point_value >= copy.getRawBits());
 }
 
-bool	Fixed::operator<=(const Fixed &copy) const
+bool	Fixed::operator<=(Fixed const &copy) const
 {
 	return (this->_fixed_point_value <= copy.getRawBits());
 }
 
-bool	Fixed::operator==(const Fixed &copy) const
+bool	Fixed::operator==(Fixed const &copy) const
 {
 	return (this->_fixed_point_value == copy.getRawBits());
 }
 
-bool	Fixed::operator!=(const Fixed &copy) const
+bool	Fixed::operator!=(Fixed const &copy) const
 {
 	return (this->_fixed_point_value != copy.getRawBits());
 }
 
-Fixed	Fixed::operator+(const Fixed &copy) const
+Fixed	Fixed::operator+(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() + copy.toFloat()));
 }
 
-Fixed	Fixed::operator-(const Fixed &copy) const
+Fixed	Fixed::operator-(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() - copy.toFloat()));
 }
 
-Fixed	Fixed::operator*(const Fixed &copy) const
+Fixed	Fixed::operator*(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() * copy.toFloat()));
 }
 
-Fixed	Fixed::operator/(const Fixed &copy) const
+Fixed	Fixed::operator/(Fixed const &copy) const
 {
 	return (Fixed(this->toFloat() / copy.toFloat()));
 }

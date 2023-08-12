@@ -14,14 +14,23 @@
 
 int main( void )
 {
-	Point	a(0, 0);
-	Point	b(0, 5);
-	Point	c(5, 0);
-	Point	p(1, 1);
+	Point const	a(0.0f, 0.0f);
+	Point const	b(25.0f, 0.0f);
+	Point const	c(0.0f, 25.0f);
+	float		x, y;
 
-	if (bsp(a, b, c, p))
+	std::cout << "Triangle is defined with A " << a << " B " << b << " C " \
+				<< c << std::endl;
+	std::cout << "Input point to check.\nX: ";
+	std::cin >> x;
+	std::cout << "Y: ";
+	std::cin >> y;
+
+	Point const point(x, y);
+
+	if (bsp(a, b, c, point))
 		std::cout << "Point is in the triangle" << std::endl;
 	else
-		std::cout << "Point is not in the triangle" << std::endl;
+		std::cout << "Point is NOT in the triangle" << std::endl;
 	return 0;
 }

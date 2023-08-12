@@ -21,13 +21,15 @@ class Point
 		Fixed const	_y;
 	public:
 		Point();
-		Point(const Point &copy);
-		Point(const float x, const float y);
-		Point &operator=(const Point &copy);
+		Point(Point const &copy);
+		Point(float const x, float const y);
+		Point &operator=(Point const &copy);
 		~Point();
 
 		Fixed	getX() const;
 		Fixed	getY() const;
 };
 
-bool	bsp(Point const a, Point const b, Point const c, Point const point);
+std::ostream &operator<<(std::ostream &out, Point const &value);
+
+bool	bsp(Point const &a, Point const &b, Point const &c, Point const &point);
